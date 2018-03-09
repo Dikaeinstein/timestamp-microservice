@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   res.status(200).send('Welcome to the Timestamp Microservice');
 });
 
+app.get('/api', (req, res) => res.status(200).json({
+  message: `Request should be of the form: GET /api/1594589343 or GET /api/jan 1, 2015`,
+}))
+
 app.get('/api/:time', (req, res) => {
   const { time } = req.params;
   // Bad request
